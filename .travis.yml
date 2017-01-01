@@ -16,6 +16,9 @@ branches:
     - master
 notifications:
   email: false  
-# Script that will be ran  
+# Script that will be ran for the build
 script:
   - npm run validate
+# Scripts that will only be run after a successful build
+after_success:
+  - npm run report-coverage  
