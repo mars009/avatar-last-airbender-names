@@ -1,3 +1,3 @@
-# starwars-names
+# avatar-last-airbender-names
 
-For all your random Star Wars character needs
+For all your random Avatar Last Airbender character needs
