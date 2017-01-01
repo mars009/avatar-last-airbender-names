@@ -1,0 +1,21 @@
+# Turn of sudo
+sudo: false
+# Language being used
+language: node_js
+# Specify a cache so builds don't take forever. In this case we cache the node_modules directory
+# You can always delete the cache from the Travis UI and re-run the build to re-install all the node modules
+cache:
+  directories:
+    - node_modules
+# Just building this on node 6
+node_js:
+  - 6
+# We only want to build the 'master' branch. By default it will also build pull-requests  
+branches:
+  only:
+    - master
+notifications:
+  email: false  
+# Script that will be ran  
+script:
+  - npm run validate
