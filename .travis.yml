@@ -7,18 +7,23 @@ language: node_js
 cache:
   directories:
     - node_modules
-# Just building this on node 6
-node_js:
-  - 6
-# We only want to build the 'master' branch. By default it will also build pull-requests  
-branches:
-  only:
-    - master
 notifications:
-  email: false  
-# Script that will be ran for the build
-script:
+  email: false
+# Just building this on node 6  
+node_js:
+  - '7'
+  - '6'
+  - '4'
+# Script that will be ran for the build  
+before_script:
+  - npm prune
   - npm run validate
 # Scripts that will only be run after a successful build
 after_success:
-  - npm run report-coverage  
+  - npm run report-coverage 
+  - npm run semantic-release
+# We only want to build the 'master' branch. By default it will also build pull-requests    
+branches:
+  only: master
+  except:
+    - /^v\d+\.\d+\.\d+$/
