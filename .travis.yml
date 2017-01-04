@@ -12,8 +12,7 @@ notifications:
 # Just building this on node 6  
 node_js:
   - '7'
-  - '6'
-  - '4'
+  - '6'  
 # Script that will be ran for the build  
 before_script:
   - npm prune
